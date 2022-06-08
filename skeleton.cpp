@@ -7,7 +7,7 @@
  * @param dst			输出图像
  * @param maxIterations	最大迭代次数
  */
-void thinImage(cv::Mat& src, cv::Mat& dst, int maxIterations = -1)
+void skeleton(cv::Mat& src, cv::Mat& dst, int maxIterations = -1)
 {
 	dst = src.clone();
     cv::Mat mid = src.clone();;
@@ -120,7 +120,7 @@ int main(int argc, char* argv[])
     cv::Mat img = cv::imread("1.jpg", 0), img1, img2 = img.clone();
     cv::cvtColor(img2, img2, cv::COLOR_GRAY2RGB);
     cv::threshold(img, img, 100, 1, cv::THRESH_BINARY);
-	thinImage(img,img1);
+	skeleton(img,img1);
 
     std::vector<cv::Point> P;
 	for (int i = 0; i < img.cols; i++)
