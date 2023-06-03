@@ -6,7 +6,7 @@
 
 void susan(cv::Mat& src, cv::Mat& dst, float t)
 {
-	cv::Mat susan_mask= cv::Mat::ones(7, 7, CV_8U);
+	cv::Mat susan_mask = cv::Mat::ones(7, 7, CV_8U);
 	susan_mask.at<uchar>(0, 0) = 0; 
 	susan_mask.at<uchar>(0, 1) = 0;
 	susan_mask.at<uchar>(0, 5) = 0;
